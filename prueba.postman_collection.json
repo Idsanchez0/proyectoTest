@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "718f11b0-208a-4822-aea5-8bfd72309fbf",
+		"name": "prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ticket",
+			"item": [
+				{
+					"name": "ticket list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8585/api/ticket",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8585",
+							"path": [
+								"api",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"destino\":\"Quito\",\r\n    \"salida\":\"2022-10-3 16:45\",\r\n    \"retorno\":\"2022-10-10 01:45\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8585/api/ticket/getTicker",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8585",
+							"path": [
+								"api",
+								"ticket",
+								"getTicker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encidUser\":1,\r\n    \"destino\" :\"Ecuador\",\r\n    \"aerolinea\" :\"Tame\",\r\n    \"precio\" :200.89,\r\n    \"numero_escalas\" :8,\r\n    \"salida\" :\"2022-10-3 16:45\",\r\n    \"llegada\" :\"2022-10-10 01:45\",\r\n    \"duracion\" :\"10 h 4 minutos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8585/api/ticket/store",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8585",
+							"path": [
+								"api",
+								"ticket",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"destino\" :\"Quito\",\r\n    \"aerolinea\" :\"Tame\",\r\n    \"precio\" :200.89,\r\n    \"numero_escalas\" :8,\r\n    \"salida\" :\"2022-10-3 16:45\",\r\n    \"retorno\" :\"2022-10-10 01:48\",\r\n    \"duracion\" :\"10 h 4 minutos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8585/api/ticket/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8585",
+							"path": [
+								"api",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "cliente list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8585/api/ticket",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8585",
+							"path": [
+								"api",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encidUser\":1,\r\n    \"destino\" :\"Ecuador1\",\r\n    \"aerolinea\" :\"Tame\",\r\n    \"precio\" :200.89,\r\n    \"numero_escalas\" :8,\r\n    \"salida\" :\"2022-10-3 16:45\",\r\n    \"llegada\" :\"2022-10-10 01:45\",\r\n    \"duracion\" :\"10 h 4 minutos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8585/api/ticket/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8585",
+							"path": [
+								"api",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
