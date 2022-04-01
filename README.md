@@ -10,5 +10,6 @@ Para poder correr el proyecto se debe realizar los siguientes pasos:
 8) Ejecutar el comando "php artisan db:seed --class=TicketAereoSeeder"
 9) Una vez terminada la configuracion se podra correr el comando "php artisan cache:clear"
 10) Verificar en docker que la imagen se encuentre montada y verificar en el navegador web mediante la siguiente url http://127.0.0.1:8585
+11) En la carpeta raiz del proyecto se encuentra un archivo con el nombre "prueba.postman_collection.json" para poder verificar mediante postman el funcionamiento de las urls generadas.
 
 *Nota: la base de datos ya se encuentra creada dentro del docker
