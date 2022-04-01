@@ -1,0 +1,51 @@
+version: '3.8'
+
+networks:
+  test-api-dev:
+    name: dev-test-api
+
+services:
+  nginx:
+    image: nginx:1.19.4
+    container_name: test-api-nginx
+    ports:
+      - "8585:80"
+    volumes:
+      - ./test-app:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - test-api-dev
+
+  mysql:
+    image: mysql:8.0.26
+    platform: linux/amd64
+    container_name: test-api-mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "33308:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test_usuario
+      MYSQL_PASSWORD: test_clave
+      MYSQL_ROOT_PASSWORD: test_clave
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - test-api-dev
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-api-php
+    volumes:
+      - ./test-app:/var/www/html
+    ports:
+      - "59002:9000"
+    networks:
+      - test-api-dev
